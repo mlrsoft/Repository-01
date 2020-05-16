@@ -1,0 +1,60 @@
+{
+    "_embedded": {
+        "people": [
+            {
+                "firstName": "Frodo",
+                "lastName": "Baggins",
+                "_links": {
+                    "self": {
+                        "href": "http://localhost:8080/people/1"
+                    },
+                    "person": {
+                        "href": "http://localhost:8080/people/1"
+                    }
+                }
+            },
+            {
+                "firstName": "Albert",
+                "lastName": "Einstein",
+                "_links": {
+                    "self": {
+                        "href": "http://localhost:8080/people/2"
+                    },
+                    "person": {
+                        "href": "http://localhost:8080/people/2"
+                    }
+                }
+            },
+            {
+                "firstName": "Eugène",
+                "lastName": "Delecroix",
+                "_links": {
+                    "self": {
+                        "href": "http://localhost:8080/people/3"
+                    },
+                    "person": {
+                        "href": "http://localhost:8080/people/3"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "http://localhost:8080/people{?page,size,sort}",
+            "templated": true
+        },
+        "profile": {
+            "href": "http://localhost:8080/profile/people"
+        },
+        "search": {
+            "href": "http://localhost:8080/people/search"
+        }
+    },
+    "page": {
+        "size": 20,
+        "totalElements": 3,
+        "totalPages": 1,
+        "number": 0
+    }
+}
