@@ -6,7 +6,7 @@
 	<groupId>dk.leh</groupId>
 	<artifactId>gs-accessing-data-rest-new</artifactId>
 	<version>0.1.1</version>
-	<description>Accessing JPA Data with REST - LEH 2019-07-16 07:45</description>
+	<description>Accessing JPA Data with REST - LEH 2020-05-16 11:50</description>
 	<url>https://spring.io/guides/gs/accessing-data-rest/</url>
 
 	<properties>
