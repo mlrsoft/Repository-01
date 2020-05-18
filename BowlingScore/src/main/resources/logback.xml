@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration>
+
+<configuration>
+
+	<property name="USER_HOME" value="${user.home}" />
+	<property name="APP_NAME" value="BowlingScore" />
+	<property name="APP_VERSION" value="1.0.1" />
+
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36}:%L - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ROLLING"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${USER_HOME}/Logs/${APP_NAME}/${APP_VERSION}/${APP_NAME}.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>${USER_HOME}/Logs/${APP_NAME}/${APP_VERSION}/${APP_NAME}-%d{yyyy-MM-dd}.log</fileNamePattern>
+			<!-- Keep 30 days' worth of history capped at 3GB total size -->
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>3GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36}:%L - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="ERROR">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+	<root level="INFO">
+		<appender-ref ref="ROLLING" />
+	</root>
+
+</configuration>
