@@ -64,7 +64,7 @@ public class ApiController {
          String pointsResultStr = formatPoints(pointsEntity.getToken(), pointsResult);
 
          if (swDebug[0]) {
-            logger.info("++" + methodName + ":" + "pointsResultJson=" + pointsResultStr);
+            logger.info("++" + methodName + ":" + "pointsResultStr=" + pointsResultStr);
          }
 
          String resultStr = postPointsResult(pointsResultStr);
@@ -74,10 +74,6 @@ public class ApiController {
          }
 
          ResultEntity resultEntity = gson.fromJson(resultStr, ResultEntity.class);
-
-         if (swDebug[0]) {
-            logger.info("++" + methodName + ":" + resultEntity);
-         }
 
          if (swDebug[0]) {
             logger.info("++" + methodName + ":" + "Expected:" + swSuccess);

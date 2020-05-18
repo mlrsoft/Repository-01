@@ -44,15 +44,15 @@ public class PointsAlgorithm {
             pointsResult = new int[points.length];
             for (int i = 0; i < points.length; i++) {
                for (int j = i; j < points.length; j++) {
-                  pointsResult[j] += points[i][0] + points[i][1];
+                  pointsResult[j] += (points[i][0] + points[i][1]);
                }
             }
-            for (int i = 0; i < points.length; i++) {
+            for (int i = 0; i < points.length - 1; i++) {
                pointsBonus = 0;
-               if (points[i][0] == 10 && points[i][1] == 0 && i < points.length - 1) {
+               if (points[i][0] == 10 && points[i][1] == 0) {
                   // Strike
                   idx = i + 1;
-                  pointsBonus += points[idx][0] + points[idx][1];
+                  pointsBonus += (points[idx][0] + points[idx][1]);
                   if (points[idx][0] == 10 && points[idx][1] == 0) {
                      if (i < points.length - 2) {
                         idx = i + 2;
@@ -60,7 +60,7 @@ public class PointsAlgorithm {
                      }
                   }
                }
-               else if (points[i][0] + points[i][1] == 10 && i < points.length - 1) {
+               else if ((points[i][0] + points[i][1]) == 10) {
                   // Spare
                   idx = i + 1;
                   pointsBonus += points[idx][0];

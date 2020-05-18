@@ -12,6 +12,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -39,9 +40,9 @@ public class ApplicationTest {
       pointsEntity_01.setPoints(points_01);
    }
 
-   @Test
-   public void testCalculatePoints_success() throws Exception {
-      String methodName = "testCalculatePoints_success";
+   @Ignore
+   public void testCalculatePoints() throws Exception {
+      String methodName = "testCalculatePoints";
 
       String expected;
       String resultStr;
@@ -66,14 +67,21 @@ public class ApplicationTest {
       String methodName = "testGetPointsValidated_success";
 
       boolean swForceFail = false;
-      boolean swOk = apiController.getPointsValidated(swForceFail);
+      boolean swOk;
 
-      if (swDebug[0]) {
-         logger.info("++" + methodName + ":" + "Expected:" + true);
-         logger.info("++" + methodName + ":" + "Result..:" + swOk);
+      for (int i = 0; i < 1; i++) {
+
+         swOk = apiController.getPointsValidated(swForceFail);
+
+         if (swDebug[0]) {
+            logger.info("++" + methodName + ":" + "Expected " + i + ":" + true);
+            logger.info("++" + methodName + ":" + "Result.. " + i + ":" + swOk);
+         }
+
+         assertTrue(swOk);
+
+         Thread.sleep(1200);
       }
-
-      assertTrue(swOk);
    }
 
    @Test
